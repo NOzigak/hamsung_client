@@ -1,0 +1,94 @@
+
+@font-face {
+    font-family: "InriaSerif";
+    src: url("../../../public/fonts/InriaSerif-Regular.ttf");
+}
+
+.Wrapper {
+    border: 1px solid rgba(142, 142, 142, 0.5);
+    border-radius: 15px;
+
+    display: flex;
+    flex-direction: column;
+    width: 40vw;
+    height: 50vh;
+    align-items: center;
+    /* 정렬 */
+    margin: 25vh auto;
+    align-items: center;
+    
+    
+}
+
+.TitleBoard {
+    border: 1px solid rgba(142, 142, 142, 0.5);
+    border-radius: 15px 15px 0px 0px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40vw;
+    height: 10vh;
+
+}
+
+
+.Title {
+    font-family: "InriaSerif";
+    font-weight: 400;
+    font-size: 7vh;
+    line-height: 38px;
+    color: black;
+}
+
+.LoginForm {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:2vh;
+    width: 100%;
+}
+
+.Email {
+    box-sizing: border-box;
+    border-width: 0;
+    border-bottom: 1px solid rgba(142, 142, 142, 0.5);
+    width: 30vw;
+    height: 5vh;
+    font-size: 2vh;
+    margin-top: 10vh;
+}
+
+.Password {
+    box-sizing: border-box;
+    border-width: 0;
+    border-bottom: 1px solid rgba(142, 142, 142, 0.5);
+    width: 30vw;
+    height: 5vh;
+    font-size: 2vh;
+
+}
+
+.LoginButton {
+    background: #53B569;
+    border-radius: 10px;
+    border-width: 0;
+    height: 5vh;
+    width: 30vw;
+    font-size: 3vh;
+    font-weight: 700;
+    cursor: pointer;
+    color: white;
+}
+
+.Switcher {
+    margin-top: 1vh;
+
+    a {
+        color: black;
+        text-decoration-line: none;
+        font-size: 2vh;
+        text-align: center;
+    }
+}
