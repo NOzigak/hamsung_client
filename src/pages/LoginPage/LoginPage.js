@@ -22,15 +22,13 @@ const LoginPage = () => {
 
 
   return(
-    <div className="Wrapper">
+    <div className="LoginWrapper">
       <form className="LoginForm" onSubmit={handleSubmit}>
         <div className="TitleBoard">
             <h1 className="Title">Login</h1>
         </div>
-          <input className="Email" placeholder="이메일을 입력하세요" type="email" value={email} onChange={handleData} required/>
-        <div>
-          <input className="Password" placeholder="비밀번호를 입력하세요" type="password" value={password} onChange={handleData} required/>
-        </div>
+        <input className="Email" placeholder="이메일을 입력하세요" type="email" value={email} onChange={handleData} required/>
+        <input className="Password" placeholder="비밀번호를 입력하세요" type="password" value={password} onChange={handleData} required/>
         <button className="LoginButton">로그인</button>
       </form>
       <div className="Switcher">
