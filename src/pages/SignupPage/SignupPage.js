@@ -9,9 +9,16 @@ import SignupModal from "../../components/SignupModal/SignupModal";
 const SignupPage = () => {
   const [formData, setFormData] = useState({
     userName: '',
+    isNameValide: false,
+
     email: '',
+    isEamilValid: false,
+
     password: '',
+    isPwValide: false,
+
     passwordConfirm: '',
+    pwConfirmValide: false,
   });
 
   const [errors, setErrors] =useState({});
@@ -25,7 +32,7 @@ const SignupPage = () => {
   const {userName, email, password, passwordConfirm} = formData;
 
   useEffect(() => {
-    //console.log(formData)
+    setErrors(validateUser(formData))
   }, [formData])
 
   const onChange = (e) => {
@@ -40,16 +47,16 @@ const SignupPage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const validationErrors = validateUser(formData)
-    setErrors(validationErrors)
-    console.log(Object.keys(errors).length)
-    console.log(Object.keys(formData.email).length)
+    
+    setErrors(validateUser(formData))
+
     // login hook
-    if(Object.keys(errors).length === 0 && Object.keys(formData.email).length !== 0
-      && Object.keys(formData.userName).length !== 0 && Object.keys(formData.password).length !== 0
+    if(Object.values(errors)[0].length === 0 && Object.values(errors)[1].length === 0 &&
+    Object.values(errors)[2].length === 0 && Object.values(errors)[3].length === 0
     ){
       showModal()
-    }
+      console.log("회원가입 성공");
+    } 
   }
 
 

@@ -6,9 +6,10 @@ function SignupModal({ setModalOpen, id, title, content, writer }) {
     
     const nav = useNavigate();
     // 모달 끄기 
-    const closeModal = () => {
+    const closeModal = (e) => {
         setModalOpen(false);
         nav("/");
+        e.preventDefault();
     };
 
     return (
