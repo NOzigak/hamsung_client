@@ -1,0 +1,68 @@
+.tableContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.searchFilter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 5vw;
+}
+
+.searchBar {
+    height: 5vh;
+    width: 30vw;
+    background: #FFFFFF;
+    border: 1px solid #D9D9D9;
+
+}
+
+.tableWrapper {
+    width: 80vw;
+
+}
+
+.tableTop {
+    border-top: 1px solid black;
+    margin-top: 2vh;
+}
+
+.tableBottom {
+    border-bottom: 1px solid black;
+}
+
+.HeaderRow {
+    display: flex;
+    flex-direction: row;
+    height: 7vh;
+    line-height: 7vh;
+    border-bottom: 1px solid gray;
+
+}
+
+.row:hover {
+    color: blue;
+}
+
+.columnHeaderBasic {
+    font-size: 2vh;
+    width: 15%;
+    text-align: center;
+}
+
+.columnHeaderTitle {
+    font-size: 2vh;
+    width: 50%;
+    text-align: center;
+}
+
+.Footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 50px;
+}

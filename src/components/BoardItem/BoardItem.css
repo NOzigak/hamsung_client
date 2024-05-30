@@ -1,0 +1,38 @@
+.boardItem {
+    display: flex;
+    cursor: pointer;
+
+    border-bottom: 1px solid #818181;
+}
+
+.boardItem:hover {
+    color: #69D281;
+}
+
+.ItemWrapper {
+    display: flex;
+    flex-direction: row;
+
+    height: 7vh;
+    width: 80vw;
+
+    line-height: 7vh;
+}
+
+
+
+.category {
+    color: red;
+}
+
+.columnBasic {
+    font-size: 2vh;
+    width: 15%;
+    text-align: center;
+}
+
+.columnTitle {
+    font-size: 2vh;
+    width: 50%;
+    text-align: center;
+}
