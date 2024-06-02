@@ -1,0 +1,7 @@
+
+.listWrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 4vw;
+    justify-content: center;
+}

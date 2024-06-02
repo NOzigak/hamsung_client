@@ -3,8 +3,8 @@ import './App.css';
 import Mainpage from './pages/MainPage/MainPage';
 import LoginPage from './pages/LoginPage/LoginPage';
 import SignupPage from './pages/SignupPage/SignupPage';
-import BulletinEditPage from './pages/BulletinEditPage';
-import BulletinViewPage from './pages/BulletinViewPage';
+import NewBoard from './pages/NewBoard';
+import ViewBoardPage from './pages/ViewBoardPage';
 import Mypage from './pages/MyPage/Mypage';
 import NoticeEditPage from './pages/NoticeEditPage/NoticeEditPage';
 import NoticeViewPage from './pages/NoticeViewPage/NoticeViewPage';
@@ -22,8 +22,8 @@ function App() {
           <Route path='/'element={<LoginPage />}/>
           <Route path='/signup' element={<SignupPage />} />
           <Route path='/home' element={<Mainpage />} />
-          <Route path='/newBulletin' element={<BulletinEditPage />} />
-          <Route path='/bulletin' element={<BulletinViewPage />} />
+          <Route path='/newBoard' element={<NewBoard />} />
+          <Route path='/viewBoard' element={<ViewBoardPage />} />
           <Route path='/mypage' element={<Mypage />} />
           <Route path='/studyGroup' element={<StudyGroupPage />} />
           <Route path='/newNotice' element={<NoticeEditPage />} />

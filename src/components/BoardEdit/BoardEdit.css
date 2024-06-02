@@ -1,0 +1,100 @@
+.boardWrapper {
+    padding-left: 7vw;
+    padding-right: 7vw;
+    margin-top: 20vh;
+}
+
+.boardTitle {
+    border-bottom: 2px solid rgba(142, 142, 142, 0.5);
+    font-size: 2vh;
+}
+.boardInput {
+    display: flex;
+    flex-direction: column;
+    gap: 8vh;
+    margin-top: 8vh;
+    padding-left: 7vw;
+
+}
+
+.studyName {
+    width: 50vw;
+    height: 5vh;
+
+    background: #FFFFFF;
+    border: 0.5px solid #747474;
+
+}
+
+.capacity {
+    width: 5vw;
+    height: 5vh;
+
+    background: #FFFFFF;
+    border: 0.5px solid #747474;
+}
+
+.studyCategory {
+    width: 10vw;
+    height: 5vh;
+
+    background: #FFFFFF;
+    border: 0.5px solid #747474;
+}
+
+.place {
+    width: 20vw;
+    height: 5vh;
+
+    background: #FFFFFF;
+    border: 0.5px solid #747474;
+}
+
+.description {
+    width: 40vw;
+    height: 30vh;
+
+    background: #FFFFFF;
+    border: 0.5px solid #747474;
+}
+
+.descWrapper {
+    display: flex;
+    gap: 1vw;
+}
+
+.btnSection {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    padding: 4vh;
+    gap: 4vw;
+}
+
+.createBtn{
+    width: 5vw;
+    height: 5vh;
+
+    background-color: #53B569;
+    color: white;
+
+    border: 1px solid #8A8A8A;
+    border-radius: 10px;
+
+    font-size:2vh;
+    cursor: pointer;
+}
+
+.cancleBtn {
+    width: 5vw;
+    height: 5vh;
+
+    background-color: white;
+
+    border: 1px solid #8A8A8A;
+    border-radius: 10px;
+
+    font-size:2vh;
+    cursor: pointer;
+}
