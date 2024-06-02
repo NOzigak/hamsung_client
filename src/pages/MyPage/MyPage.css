@@ -1,0 +1,176 @@
+.mainTag {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 10vh;
+    background-color: #115d0e;
+
+}
+
+.myStudy {
+    display: flex;
+    align-items: flex-start;
+    border: 2px solid #cacaca;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    margin-left: 13.5vw;
+    margin-top: 5vh;
+    width: 72vw;
+    height: 19vh;
+  }
+  
+  .studyTitle {
+    font-size: 22px;
+    margin-top: 6.5vh;
+    margin-left: 4vw;
+    margin-right: 38vw;
+  }
+  
+  .studyList-button {
+    padding: 1vw 3vw;
+    background-color: white;
+    color: #4caf50;
+    border:  #4caf50 solid 1.8px;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 15px;
+    margin-top: 5vh;
+  }
+  
+  .studyList-button:hover {
+    background-color: #cecece5c;
+  }
+
+
+.title{
+    margin-left: 10vw;
+    margin-top: 13vh;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 26px;
+}
+
+.outline {
+    width: 85vw;
+    height: 1px;
+    margin-left: 7vw;
+    position: absolute;
+    top: 19.5vh;
+    background-color: #000;
+    margin-top: 10px;
+}
+
+.inline {
+    width: 72.5vw;
+    height: 0.12vh;
+    position: absolute;
+    left: 14vw;
+    top: 71%;
+    background-color: #000;
+    margin-top: 10px;
+}
+
+.deleteID {
+    width: 135px;
+    height: 31px;
+    position: absolute; 
+    left: 997px;
+    top:84px;
+    padding: 1vh 3vw;
+    margin-left: 1vw; 
+    font-size: 13px;
+    font-weight: 600;
+    background-color: #53b56832;
+    color: #53B569;
+    border: 2.5px solid ;
+    border-color: #53B569;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+.profile {
+    width: 72vw;
+    height: 35vh;
+    margin-top: 7vh;
+    margin-left: 13.5vw;
+    background: #69D281;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+}
+
+.circle-container {
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    border-radius: 50%;
+    position: absolute;
+    left: 17.5vw;
+    top: 30vh;
+    bottom: 50vh;
+}
+
+.profile-image {
+    width: 100%;
+    height: auto;
+}
+
+.user-ID{
+    position: absolute;
+    left: 32%;
+    top: 26%;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 2.5vw;
+}
+
+.user-point{
+    position: absolute;
+    left: 32%;
+    top: 38.5%;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 39px;
+}
+
+.user-tag{
+    position: absolute;
+    left: 32%;
+    top: 42%;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 39px;
+}
+
+.level-image img{
+    width: 85px;
+    height: auto;
+    position: absolute;
+    left: 960px;
+    top: 150px;
+}
+
+.study-list{
+    margin-left: 14vw;
+    margin-top: 6vh;
+    font-style: normal;
+    font-weight: 550;
+    font-size: 20px;
+}
+
+.edit-profile-button{
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+    position: absolute;
+    left: 955px;
+    top: 330px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    color:#646464;
+    text-decoration: underline;
+}
