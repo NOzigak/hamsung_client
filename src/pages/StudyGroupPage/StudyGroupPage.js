@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./StudyGroupPage.css";
-import FinishStudyModal from "./FinishStudyModal";
+import FinishStudyModal from "../../components/FinishStudyModal/FinishStudyModal";
 
 const StudyPage = () => {
   const [showFinishStudyModal, setShowFinishStudyModal] = useState(false);

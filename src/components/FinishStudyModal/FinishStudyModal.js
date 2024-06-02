@@ -1,6 +1,6 @@
 import React from "react";
 import "./FinishStudyModal.css";
-import "./DeleteID.css";
+import "../DeleteID/DeleteID.css";
 
 const FinishStudyModal = ({ onClose }) => {
   return (

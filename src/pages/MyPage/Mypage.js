@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import "./MyPage.css";
-import profileImage from "./profileImage.jpg";
-import lvSilver from "./silver.png";
-import lvGold from "./gold.png";
-import DeleteID from "../DeleteID";
-import DeleteConfirm from "../DeleteConfirm";
-import EditProfile from "../EditProfile";
+import profileImage from "../../assets/profileImage.jpg";
+import lvSilver from "../../assets/silver.png";
+import lvGold from "../../assets/gold.png";
+import DeleteID from "../../components/DeleteID/DeleteID";
+import DeleteConfirm from "../../components/DeleteConfirm/DeleteConfirm";
+import EditProfile from "../../components/EditProfile/EditProfile";
 import {Link} from 'react-router-dom';
 
 class MyPage extends Component {
@@ -98,7 +98,7 @@ class MyPage extends Component {
                 
                 <div className="myStudy">
                  <p className="studyTitle">{studyTitle1}</p>
-                 <Link to="/study">
+                 <Link to="/studyGroup">
                      <button className="studyList-button">바로가기</button>
                  </Link>
                 </div>
