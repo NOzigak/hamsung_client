@@ -22,7 +22,10 @@ export default function BoardList() {
             title : "랙트고",
             place : "서울",
             isRecruit : 1,
-            created_at : new Date("2024-06-01").getTime()
+            created_at : new Date("2024-06-01").getTime(),
+            view : 45,
+            likeCnt : 21
+
         },
         {
             id : 2,
@@ -31,7 +34,9 @@ export default function BoardList() {
             title : "지각하지 말자",
             place : "서울",
             isRecruit : 0,
-            created_at : new Date("2024-06-02").getTime()
+            created_at : new Date("2024-06-02").getTime(),
+            view : 44,
+            likeCnt : 20
         },
         {
             id : 3,
@@ -40,7 +45,9 @@ export default function BoardList() {
             title : "노지각",
             place : "서울",
             isRecruit : 1,
-            created_at : new Date("2024-06-01").getTime()
+            created_at : new Date("2024-06-01").getTime(),
+            view : 43,
+            likeCnt : 12,
         },
     ]
 

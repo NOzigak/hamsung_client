@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import "./BoardEdit.css";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function BoardEdit(props){
 
     const selectList = ["어학","취업", "고시", "프로그래밍", "기타"]
     const [inputData, setInputData] = useState({
         title : "",
-        capacity : 0,
+        capacity : 1,
         category : "어학",
         place : "",
         description : "",
