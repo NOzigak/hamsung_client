@@ -14,14 +14,14 @@ function SignupModal({ setModalOpen, id, title, content, writer }) {
 
     return (
         <div className="container">
-          <div className="title">
+          <div className="signupModalTitle">
             <p>확인메시지</p>
           </div>
-          <div className="desc">
+          <div className="signupModalDesc">
             <p>회원가입 성공.</p>
           </div>
-          <div className="btnWrapper">
-            <button className="close" onClick={closeModal}>
+          <div className="signupBtnWrapper">
+            <button className="signupModalClose" onClick={closeModal}>
                 확인
             </button>
           </div>
