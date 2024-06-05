@@ -25,7 +25,7 @@
     flex-direction: column;
 }
 
-.title {
+.signupModalTitle {
     background-color: #BAD9C1;
     border-radius: 8px 8px 0px 0px;
     height: 6vh;
@@ -35,7 +35,7 @@
 
 }
 
-.desc {
+.signupModalDesc {
     border-bottom: 1px solid #D9D9D9;
     height: 8vh;
     p {
@@ -43,14 +43,14 @@
     }
 }
 
-.btnWrapper {
+.signupBtnWrapper {
     display: flex;
     justify-content: right;
 
 }
 
   /* 모달창 내부 확인 버튼 */
-.close {
+.signupModalClose {
     width: 5vw;
     height: 3vh;
     right: 2vw;

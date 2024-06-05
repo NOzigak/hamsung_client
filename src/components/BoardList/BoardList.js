@@ -60,8 +60,8 @@ export default function BoardList() {
                 ))}
             </select>
             <input className="searchBar" type="text" placeholder="제목으로 검색"/>
-            <RecruitBtn text="스터디 모집하기" onClick={()=>nav("/newBoard")}/>
             <RecruitBtn text="검색하기" />
+            <RecruitBtn text="스터디 모집하기" onClick={()=>nav("/newBoard")}/>
         </div>
 
         <div className="tableWrapper">
