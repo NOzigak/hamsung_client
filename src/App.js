@@ -1,11 +1,11 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
-import Mainpage from './pages/MainPage/MainPage';
+import MainPage from './pages/MainPage/MainPage';
 import LoginPage from './pages/LoginPage/LoginPage';
 import SignupPage from './pages/SignupPage/SignupPage';
 import NewBoard from './pages/NewBoard';
 import ViewBoardPage from './pages/ViewBoardPage';
-import Mypage from './pages/MyPage/Mypage';
+import MyPage from './pages/MyPage/MyPage';
 import NoticeEditPage from './pages/NoticeEditPage/NoticeEditPage';
 import NoticeViewPage from './pages/NoticeViewPage/NoticeViewPage';
 import StudyGroupPage from './pages/StudyGroupPage/StudyGroupPage';
@@ -21,10 +21,10 @@ function App() {
         <Routes>
           <Route path='/'element={<LoginPage />}/>
           <Route path='/signup' element={<SignupPage />} />
-          <Route path='/home' element={<Mainpage />} />
+          <Route path='/home' element={<MainPage />} />
           <Route path='/newBoard' element={<NewBoard />} />
           <Route path='/viewBoard' element={<ViewBoardPage />} />
-          <Route path='/mypage' element={<Mypage />} />
+          <Route path='/mypage' element={<MyPage />} />
           <Route path='/studyGroup' element={<StudyGroupPage />} />
           <Route path='/newNotice' element={<NoticeEditPage />} />
           <Route path='/notice' element={<NoticeViewPage />} />

@@ -1,0 +1,38 @@
+.title-container {
+    display: flex;
+  }
+
+
+.finish-button {
+    width: 12vw;
+    height: 5vh;
+    position: absolute;
+    left: 78vw;
+    top: 19.5vh;
+    padding: 1vh 3vw;
+    margin-left: 1vw; 
+    font-size: 1vw;
+    font-weight: 600;
+    background-color: #53b56832;
+    color: #53B569;
+    border: 2.5px solid ;
+    border-color: #53B569;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.studyPoint{
+    display: inline-block;
+    width: 1.6vw;
+    height: 3.4vh;
+    margin-left: 1vw;
+    margin-top: 6.8vh;
+}
+
+.studyPoint-text {
+    font-size: 1.4vw;
+
+    margin-left: -34.5vw;
+    margin-top: 6.5vh;
+
+}

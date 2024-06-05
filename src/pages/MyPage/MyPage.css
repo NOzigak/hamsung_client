@@ -1,13 +1,3 @@
-.mainTag {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 10vh;
-    background-color: #115d0e;
-
-}
-
 .myStudy {
     display: flex;
     align-items: flex-start;
@@ -21,9 +11,9 @@
   }
   
   .studyTitle {
-    font-size: 22px;
-    margin-top: 6.5vh;
-    margin-left: 4vw;
+    font-size: 1.5vw;
+    margin-top: 7.4vh;
+    margin-left: 5vw;
     margin-right: 38vw;
   }
   
@@ -34,8 +24,8 @@
     border:  #4caf50 solid 1.8px;
     border-radius: 15px;
     cursor: pointer;
-    font-size: 15px;
-    margin-top: 5vh;
+    font-size: 1.1vw;
+    margin-top: 5.5vh;
   }
   
   .studyList-button:hover {
@@ -44,42 +34,38 @@
 
 
 .title{
-    margin-left: 10vw;
-    margin-top: 13vh;
-    font-style: normal;
+    font-size: 2.1vw;
+    margin-left: 9vw;
+    margin-top: 5vh;
     font-weight: 600;
-    font-size: 26px;
+    background-color: transparent;
+    
 }
 
 .outline {
     width: 85vw;
     height: 1px;
     margin-left: 7vw;
-    position: absolute;
-    top: 19.5vh;
+    margin-top: -3vh;
     background-color: #000;
-    margin-top: 10px;
 }
 
 .inline {
     width: 72.5vw;
     height: 0.12vh;
-    position: absolute;
-    left: 14vw;
-    top: 71%;
+    margin-left: 13.5vw;
     background-color: #000;
-    margin-top: 10px;
+    margin-top: -1vh;
 }
 
 .deleteID {
-    width: 135px;
-    height: 31px;
-    position: absolute; 
-    left: 997px;
-    top:84px;
+    width: 12vw;
+    height: 5vh;
+    position: absolute;
+    left: 78vw;
+    top: 19.5vh;
     padding: 1vh 3vw;
-    margin-left: 1vw; 
-    font-size: 13px;
+    font-size: 1vw;
     font-weight: 600;
     background-color: #53b56832;
     color: #53B569;
@@ -91,6 +77,8 @@
 
 
 .profile {
+    display: flex;
+    flex-direction: column;
     width: 72vw;
     height: 35vh;
     margin-top: 7vh;
@@ -101,56 +89,52 @@
 }
 
 .circle-container {
-    width: 150px;
-    height: 150px;
+    position: absolute;
+    left: 18vw;
+    top: 37.7vh;
+    width: 13vw;
+    height: 26vh;
     overflow: hidden;
     border-radius: 50%;
-    position: absolute;
-    left: 17.5vw;
-    top: 30vh;
-    bottom: 50vh;
-}
-
-.profile-image {
+  }
+  
+  .profile-image {
     width: 100%;
-    height: auto;
-}
+    height: 100%;
+    object-fit: cover;
+  }
+
+
 
 .user-ID{
-    position: absolute;
-    left: 32%;
-    top: 26%;
+    padding-left: 21vw;
+    margin-bottom: 2vh;
     font-style: normal;
     font-weight: 600;
     font-size: 2.5vw;
 }
 
 .user-point{
-    position: absolute;
-    left: 32%;
-    top: 38.5%;
+    padding-left: 21vw;
+    padding-top: 1vh;
     font-style: normal;
     font-weight: 400;
-    font-size: 18px;
-    line-height: 39px;
+    font-size: 1.5vw;
 }
 
 .user-tag{
-    position: absolute;
-    left: 32%;
-    top: 42%;
+    padding-left: 21vw;
     font-style: normal;
     font-weight: 400;
-    font-size: 18px;
-    line-height: 39px;
+    font-size: 1.4vw;
 }
 
 .level-image img{
     width: 85px;
     height: auto;
     position: absolute;
-    left: 960px;
-    top: 150px;
+    left: 74vw;
+    top: 33.5vh;
 }
 
 .study-list{
@@ -158,7 +142,7 @@
     margin-top: 6vh;
     font-style: normal;
     font-weight: 550;
-    font-size: 20px;
+    font-size: 1.5vw;
 }
 
 .edit-profile-button{
@@ -166,11 +150,11 @@
     background-color: transparent;
     cursor: pointer;
     position: absolute;
-    left: 955px;
-    top: 330px;
+    left: 73vw;
+    top: 61vh;
     font-style: normal;
     font-weight: 400;
-    font-size: 13px;
+    font-size: 1vw;
     color:#646464;
     text-decoration: underline;
 }

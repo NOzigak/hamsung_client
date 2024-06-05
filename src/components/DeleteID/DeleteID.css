@@ -28,18 +28,18 @@
     height: 4vh;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
-    padding: 20px;
+    padding: 5vw;
     font-weight: 600;
 }
 
 .modal-content p{ 
-    margin: 70px 23px 20px;
+    margin: 4.5vw 3vh 1vw;
 }
 
 .modal-content {
     background-color: #fefefe;
     margin: 15% auto;
-    padding: 20px;
+    padding: 3vw;
     border: 1px solid #888;
     width: 36.2vw;
     height: 43vh;
@@ -51,7 +51,7 @@
 .close-button {
     color: #aaa;
     float: right;
-    font-size: 28px;
+    font-size: 1vw;
     font-weight: bold;
 }
 
@@ -64,10 +64,10 @@
 
 .confirm-button,
 .cancel-button {
-    margin-top: 30px;
-    margin-left: 20px;
-    padding: 8px 17px;
-    font-size: 14px;
+    margin-top: 2vw;
+    margin-left: 2vw;
+    padding: 1.5vh 1.5vw;
+    font-size: 1.1vw;
 }
 
 .confirm-button {

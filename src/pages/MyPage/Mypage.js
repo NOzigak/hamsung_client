@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import "./MyPage.css";
-import profileImage from "./profileImage.jpg";
-import lvSilver from "./silver.png";
-import lvGold from "./gold.png";
-import DeleteID from "../DeleteID";
-import DeleteConfirm from "../DeleteConfirm";
-import EditProfile from "../EditProfile";
+import profileImage from "../../assets/profileImage.jpg";
+import lvSilver from "../../assets/silver.png";
+import lvGold from "../../assets/gold.png";
+import DeleteID from "../../components/DeleteID/DeleteID";
+import DeleteConfirm from "../../components/DeleteConfirm/DeleteConfirm";
+import EditProfile from "../../components/EditProfile/EditProfile";
+import { Navbar } from "../../components/Navbar/Navbar";
 import {Link} from 'react-router-dom';
 
 class MyPage extends Component {
@@ -61,21 +62,22 @@ class MyPage extends Component {
 
         return (
             <div>
-                <div className="mainTag"></div>
+                <Navbar />
                 <p className="title">마이페이지</p>
                 <button className="deleteID" onClick={this.handleDeleteClick}>회원탈퇴</button>
                 <div className="outline"></div>
-                <div className="profile"></div>
                 <div className="circle-container">
                     <img className="profile-image" src={profileImage} alt="Profile" />
                 </div>
-                <p className="user-ID">{userName} 님</p>
-                <div className="user-point">나의 포인트: {userPoint} P</div>
-                <p className="user-tag">나의 태그: </p>
-                <div className="level-image">
-                    <img src={levelImage} alt="Level" />
+                <div className="profile">
+                  <p className="user-ID">{userName} 님</p>
+                  <div className="user-point">나의 포인트: {userPoint} P</div>
+                  <p className="user-tag">나의 태그: </p>
+                  <div className="level-image">
+                     <img src={levelImage} alt="Level" />
+                  </div>
+                  <button className="edit-profile-button" onClick={this.handleEditClick}>프로필 수정하기</button>
                 </div>
-                <button className="edit-profile-button" onClick={this.handleEditClick}>프로필 수정하기</button>
                 <p className="study-list">참여 중인 스터디</p>
                 <div className="inline"></div>
 
@@ -98,7 +100,7 @@ class MyPage extends Component {
                 
                 <div className="myStudy">
                  <p className="studyTitle">{studyTitle1}</p>
-                 <Link to="/study">
+                 <Link to="/studyGroup">
                      <button className="studyList-button">바로가기</button>
                  </Link>
                 </div>
