@@ -1,6 +1,10 @@
+
+
 const NoticeViewPage = () => {
     return(
-        <div>notice viewer</div>
+        <div>
+           notice view
+        </div>
     )
 }
 

@@ -31,8 +31,39 @@
 
 .studyPoint-text {
     font-size: 1.4vw;
-
     margin-left: -34.5vw;
     margin-top: 6.5vh;
 
+}
+
+.weekly-container{
+    margin-left: 7vw;
+    margin-top: 5vh;
+}
+.weekly-container-title{
+    font-size: 1.7vw;
+    font-weight: 600;
+}
+.weekly-study, .addStudy{
+    margin-bottom: 0.5vw;
+    width: 85vw; 
+    height: 8vh;
+    margin-left: auto; 
+    margin-right: auto; 
+    border: rgba(0, 0, 0, 0.24) 1px solid;
+}
+
+.weekly-study, .addStudy:hover{
+    cursor: pointer;
+}
+
+.weekly-study{
+    background-color: #F7e49f;
+    font-size: 1.2vw;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.711);
+}
+
+.addStudy{
+    background-color: #fff0ba7b;
 }
