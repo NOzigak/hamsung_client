@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import './StudyGroupPage.css';
 import FinishStudyModal from "../../components/FinishStudyModal/FinishStudyModal";
+import WeeklyStudyModal from "../../components/WeeklyStudyModal/WeeklyStudyModal";
 import NoticeBox from "../../components/NoticeBox/NoticeBox";
 import StudyCalendar from "../../components/StudyCalendar/StudyCalendar";
 import TodoBoard from "../../components/TodoBoard/TodoBoard";
@@ -9,6 +10,7 @@ import studyPoint from "../../assets/studyPoint.png";
 
 const StudyPage = () => {
   const [showFinishStudyModal, setShowFinishStudyModal] = useState(false);
+  const [showWeeklyStudyModal, setShowWeeklyStudyModal] = useState(false);
   const [value, setValue] = useState(new Date()); 
   const [weekCount, setWeekCount] = useState(2); 
 
@@ -26,6 +28,14 @@ const StudyPage = () => {
 
   const addStudy = () => {
     setWeekCount(weekCount + 1); 
+  };
+
+  const handleWeeklyClick = () => {
+    setShowWeeklyStudyModal(true);
+  };
+
+  const handleOkWeeklyStudyModal = () => {
+    setShowWeeklyStudyModal(false);
   };
 
   return (
@@ -55,7 +65,7 @@ const StudyPage = () => {
         <p className="weekly-container-title">스터디 관리</p>
         {[...Array(weekCount)].map((_, index) => (
           <div key={index}>
-            <button className="weekly-study">{`${index + 1}주차 스터디`}</button>
+            <button className="weekly-study" onClick={handleWeeklyClick}>{`${index + 1}주차 스터디`}</button>
           </div>
         ))}
         
@@ -67,6 +77,12 @@ const StudyPage = () => {
       {showFinishStudyModal && (
         <FinishStudyModal 
           onClose={handleCloseFinishStudyModal}
+        />
+      )}
+
+      {showWeeklyStudyModal && (
+        <WeeklyStudyModal 
+         onClose={handleOkWeeklyStudyModal} 
         />
       )}
     </div>
