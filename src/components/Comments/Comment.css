@@ -1,0 +1,38 @@
+
+.commentWrapper {
+    width: 80vw;
+
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    
+    padding-bottom: 3px;
+
+
+    p {
+        height: 2vh;
+        font-size: 2.5vh;
+
+    }
+}
+
+.replyBtn {
+    padding: 2vh;
+    width: 80vw;
+    border-bottom: 1px solid #D9D9D9;
+
+}
+
+.insertDate {
+    color: #8E8E8E;
+}
+
+.replyWrapper {
+    margin-left: 5vw;
+}
+
+.replyWrapper .replyBtn{
+    width: 75vw;
+    border-bottom: 1px solid #D9D9D9;
+}

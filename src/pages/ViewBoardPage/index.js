@@ -1,4 +1,5 @@
 import BoardBtn from "../../components/BoardBtn/BoardBtn";
+import Comments from "../../components/Comments/Comments";
 import { Navbar } from "../../components/Navbar/Navbar";
 import Viewer from "../../components/Viewer/Viewer";
 import "./style.css";
@@ -49,14 +50,28 @@ const ViewBoardPage = ({}) => {
                         description = {viewMock.description}
                     />
                 </div>
-                <div className="writeBtn">
-                    <BoardBtn title="모집중" /> {/* 모집 상태는 작성자만 바꿀수 있음 */}
-                    <BoardBtn title="신청자 리스트" />
-                    <BoardBtn title="수정하기" />
-                    <BoardBtn title="삭제하기" />
-                </div>
-                <div className="readBtn">
-                    <BoardBtn title="신청하기"/> {/* 신청하기 버튼은 열람자에게만 보임 */}
+                {/* 작성자만 바꿀수 있음 <아래 이름은 로그인으로 받아온 유저 정보로 바꿀예정>*/}
+                {viewMock.leader==="노성균" ? 
+                    <div className="writeBtn">
+                        <BoardBtn title="모집중" /> 
+                        <BoardBtn title="신청자 리스트" />
+                        <BoardBtn title="수정하기" />
+                        <BoardBtn title="삭제하기" />
+                    </div> 
+                    :
+                    <div className="readBtn">
+                        <BoardBtn title="신청하기"/> {/* 신청하기 버튼은 열람자에게만 보임 */}
+                    </div>                             
+                }
+
+
+                <div className="comments">
+                    <Comments />
+                    <div className="commentUpload">
+                        <textarea className="commentInput"></textarea>
+                        <BoardBtn title="등록하기"/>                     
+                    </div>
+
                 </div>
             </div>
         </div>
