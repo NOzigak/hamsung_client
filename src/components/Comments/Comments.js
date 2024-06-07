@@ -6,6 +6,7 @@ import Comment from "./Comment";
 const Comments = ({currentUserId}) => {
 
     //const [backendComments, setBackendComments] = useState([]);
+    //const [activeComment, setActiveComment] = useState(null); // {type : "editing" id: "1"}
     const backendComments = [
         {
             id : "1",
@@ -52,7 +53,10 @@ const Comments = ({currentUserId}) => {
         <div className="commentWrapper">
             {rootComments.map(rootComment => (
                 <div key={rootComment.id}>
-                    <Comment comment={rootComment} replies={getReplies(rootComment.id)}/>                                   
+                    <Comment 
+                        comment={rootComment} 
+                        replies={getReplies(rootComment.id)}
+                    />                                   
                 </div>
             ))}
         </div>

@@ -1,4 +1,5 @@
 import BoardBtn from "../../components/BoardBtn/BoardBtn";
+import CommentForm from "../../components/Comments/CommentForm";
 import Comments from "../../components/Comments/Comments";
 import { Navbar } from "../../components/Navbar/Navbar";
 import Viewer from "../../components/Viewer/Viewer";
@@ -67,10 +68,7 @@ const ViewBoardPage = ({}) => {
 
                 <div className="comments">
                     <Comments />
-                    <div className="commentUpload">
-                        <textarea className="commentInput"></textarea>
-                        <BoardBtn title="등록하기"/>                     
-                    </div>
+                    <CommentForm />
 
                 </div>
             </div>
