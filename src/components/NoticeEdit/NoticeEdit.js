@@ -27,8 +27,8 @@ export default function NoticeEdit(props){
         })
     }
 
-    const cancleEdit = () => {
-        nav("/home")
+    const cancelEditNotice = () => {
+        nav("/noticeList")
     }
     return (
         <div className="boardWrapper">
@@ -48,7 +48,7 @@ export default function NoticeEdit(props){
             </div>
             <div className="btnSection">
                 <button className="createBtn">생성</button>
-                <button className="cancleBtn" onClick={cancleEdit}>취소</button>
+                <button className="cancleBtn" onClick={cancelEditNotice}>취소</button>
             </div>
         </div>
     )
