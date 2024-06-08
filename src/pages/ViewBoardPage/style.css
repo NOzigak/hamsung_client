@@ -1,0 +1,56 @@
+
+.detailWrapper {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.detailTitle {
+    font-weight: 600;
+    font-size: 5vh;
+    margin-top: 2vh;
+}
+
+.writeBtn {
+    width: 80vw;
+    height: 7vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    gap: 2vw;
+    border-bottom: 1px solid #D9D9D9;
+}
+
+.readBtn {
+    width: 80vw;
+    height: 7vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    border-bottom: 1px solid #D9D9D9;
+}
+
+.comments {
+    margin-top: 2vh;
+    margin-bottom: 4vh;
+}
+
+.commentInput {
+    width: 70vw;
+    height: 20vh;
+    background: #F5F5F5;
+    border: 1px solid #E9E9E9;
+    resize: none;
+    font-size: 2vh;
+}
+
+.commentUpload {
+    display: flex;
+    flex-direction: column;
+    gap: 3vh;
+    padding: 3vw;
+    justify-content: center;
+    align-items: end;
+}
