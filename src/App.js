@@ -8,6 +8,7 @@ import ViewBoardPage from './pages/ViewBoardPage';
 import MyPage from './pages/MyPage/MyPage';
 import NoticeEditPage from './pages/NoticeEditPage/NoticeEditPage';
 import NoticeViewPage from './pages/NoticeViewPage/NoticeViewPage';
+import NoticeListPage from './pages/NoticeListPage/NoticeListPage';
 import StudyGroupPage from './pages/StudyGroupPage/StudyGroupPage';
 import RankPage from './pages/RankPage/RankPage';
 import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
@@ -24,10 +25,11 @@ function App() {
           <Route path='/home' element={<MainPage />} />
           <Route path='/newBoard' element={<NewBoard />} />
           <Route path='/viewBoard' element={<ViewBoardPage />} />
-          <Route path='/mypage' element={<MyPage />} />
+          <Route path='/myPage' element={<MyPage />} />
           <Route path='/studyGroup' element={<StudyGroupPage />} />
           <Route path='/newNotice' element={<NoticeEditPage />} />
           <Route path='/notice' element={<NoticeViewPage />} />
+          <Route path='/noticeList' element={<NoticeListPage />} />
           <Route path='/rank' element={<RankPage />} />
           <Route path='*' element={<NotFoundPage />} />
         </Routes>

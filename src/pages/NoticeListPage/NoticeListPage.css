@@ -1,0 +1,9 @@
+.noticeList{
+    display: flex;
+    flex-direction: column;
+    background-color: #69d28263;
+    margin-top: 3vh;
+    margin-left: 7vw;
+    width: 85vw;
+    height: 80vh;
+}
