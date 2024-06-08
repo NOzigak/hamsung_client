@@ -69,7 +69,6 @@ const ViewBoardPage = ({}) => {
                 <div className="comments">
                     <Comments />
                     <CommentForm />
-
                 </div>
             </div>
         </div>
