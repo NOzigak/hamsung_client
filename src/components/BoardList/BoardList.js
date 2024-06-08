@@ -7,8 +7,8 @@ import BoardItem from "../BoardItem/BoardItem";
 
 export default function BoardList() {
 
-    const selectList = ["어학","취업", "고시", "프로그래밍", "기타"]
-    const [category, setCategory] = useState("");
+    const selectList = ["전체", "어학","취업", "고시", "프로그래밍", "기타"]
+    const [category, setCategory] = useState("전체");
 
     const handleOption = (e) => {
         setCategory(e.target.value);
@@ -51,6 +51,10 @@ export default function BoardList() {
         },
     ]
 
+    const filteredData = category === "전체" ?
+        mockData
+        : mockData.filter(item => item.category === category);
+
   return (
     <div className="tableContainer">
         <div className="searchFilter">
@@ -74,7 +78,7 @@ export default function BoardList() {
                 <div className="columnHeaderBasic">상태</div>
                 <div className="columnHeaderBasic">작성일</div>
             </div>
-            {mockData.map((item)=><BoardItem key={item.id} {...item} />)}
+            {filteredData.map((item)=><BoardItem key={item.id} {...item} />)}
 
         </div>
     </div>
