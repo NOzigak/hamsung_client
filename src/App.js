@@ -24,7 +24,7 @@ function App() {
           <Route path='/signup' element={<SignupPage />} />
           <Route path='/home' element={<MainPage />} />
           <Route path='/newBoard' element={<NewBoard />} />
-          <Route path='/viewBoard' element={<ViewBoardPage />} />
+          <Route path='/viewBoard/:id' element={<ViewBoardPage />} />
           <Route path='/myPage' element={<MyPage />} />
           <Route path='/studyGroup' element={<StudyGroupPage />} />
           <Route path='/newNotice' element={<NoticeEditPage />} />

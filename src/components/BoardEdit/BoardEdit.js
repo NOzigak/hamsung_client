@@ -35,7 +35,7 @@ export default function BoardEdit({name}){
     // redux create 액션을 디스패치를 통해 리듀서에 전달.
     const dispatch = useDispatch();
     const onClickSubmitBtn = () => {
-        console.log(inputData);
+        //console.log(inputData);
         dispatch(createBoard(inputData));
         nav("/home", {replace : true});
     }
