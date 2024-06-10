@@ -4,6 +4,7 @@ import "./BoardItem.css";
 const BoardItem = ({category, writer, title, place, isRecruit, created_at}) => {
     const nav = useNavigate();
     const recruitStatus = () => {
+        console.log(title, isRecruit, "처리완료");
         if(isRecruit === 1){
             return "모집중"
         } else if (isRecruit === 0){

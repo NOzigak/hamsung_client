@@ -5,7 +5,7 @@ import { Navbar } from "../../components/Navbar/Navbar";
 import Viewer from "../../components/Viewer/Viewer";
 import "./style.css";
 
-const ViewBoardPage = ({}) => {
+const ViewBoardPage = () => {
     const viewMock = 
         {
             title: "랙트고",
