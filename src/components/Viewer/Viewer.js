@@ -6,11 +6,11 @@ const Viewer = ({leader, created_at, place, description}) => {
         <div className="viewer">
             <div className="viewInfo">
                 <p>작성자 : {leader}</p>
-                <p>Date : {created_at}</p>
+                <p>Date : {new Date(created_at).toLocaleDateString()}</p>
                 <p>장소 : {place}</p>
             </div>
             <div className="descSection">
-                <p>{description}</p>
+                <pre>{description}</pre>
             </div>
         </div>
     )

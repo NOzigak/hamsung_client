@@ -4,6 +4,7 @@ import "./BoardList.css";
 import RecruitBtn from "../RecruitBtn/RecruitBtn";
 import { useNavigate } from "react-router-dom";
 import BoardItem from "../BoardItem/BoardItem";
+import {useSelector} from "react-redux";
 
 export default function BoardList() {
 
@@ -15,46 +16,12 @@ export default function BoardList() {
         setCategory(e.target.value);
     }
     const nav = useNavigate();
-    const mockData = [
-        {
-            id : 1,
-            category : "프로그래밍",
-            writer : "홍길동",
-            title : "랙트고",
-            place : "서울",
-            isRecruit : 1,
-            created_at : new Date("2024-06-01").getTime(),
-            view : 45,
-            likeCnt : 21
-
-        },
-        {
-            id : 2,
-            category : "어학",
-            writer : "아무개1",
-            title : "지각하지 말자",
-            place : "서울",
-            isRecruit : 0,
-            created_at : new Date("2024-06-02").getTime(),
-            view : 44,
-            likeCnt : 20
-        },
-        {
-            id : 3,
-            category : "고시",
-            writer : "홍길동",
-            title : "노지각",
-            place : "서울",
-            isRecruit : 1,
-            created_at : new Date("2024-06-01").getTime(),
-            view : 43,
-            likeCnt : 12,
-        },
-    ]
-    const [searchData, setSearchData] = useState(mockData);
-
+    // redux state 호출
+    const boardData = useSelector(state => state.boards);
+    const [searchData, setSearchData] = useState(boardData);
+    console.log(searchData)
     const searchClick = () => {
-        const searchFiltered = mockData.filter(item => 
+        const searchFiltered = boardData.filter(item => 
             item.title.toLowerCase().includes(search.toLowerCase())    
         );
         setSearchData(searchFiltered);
