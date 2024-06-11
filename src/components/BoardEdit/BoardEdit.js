@@ -1,10 +1,8 @@
 import { useEffect, useState } from "react";
 import "./BoardEdit.css";
 import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { createBoard } from "../../actions/boardList";
 
-export default function BoardEdit({name}){
+export default function BoardEdit({name, initData, onSubmit}){
 
     const selectList = ["어학","취업", "고시", "프로그래밍", "기타"]
     const [inputData, setInputData] = useState({
@@ -17,8 +15,11 @@ export default function BoardEdit({name}){
     const nav = useNavigate();
 
     useEffect(()=>{
+        if(initData){
+            setInputData(initData);
+        }
        //console.log(inputData)
-    },[inputData])
+    },[initData])
 
     const handleinputData = (e) => {
         const {name, value} = e.target
@@ -32,14 +33,9 @@ export default function BoardEdit({name}){
         nav("/home")
     }
 
-    // redux create 액션을 디스패치를 통해 리듀서에 전달.
-    const dispatch = useDispatch();
-    const onClickSubmitBtn = () => {
-        //console.log(inputData);
-        dispatch(createBoard(inputData));
-        nav("/home", {replace : true});
+    const onClickSubmit = () => {
+        onSubmit(inputData);
     }
-
     return (
         <div className="boardWrapper">
             <div className="titleWrapper">
@@ -69,7 +65,7 @@ export default function BoardEdit({name}){
                 </div>   
             </div>
             <div className="btnSection">
-                <button className="createBtn" onClick={onClickSubmitBtn}>생성</button>
+                <button className="createBtn" onClick={onClickSubmit}>생성</button>
                 <button className="cancleBtn" onClick={cancleEdit}>취소</button>
             </div>
         </div>

@@ -12,6 +12,7 @@ import NoticeListPage from './pages/NoticeListPage/NoticeListPage';
 import StudyGroupPage from './pages/StudyGroupPage/StudyGroupPage';
 import RankPage from './pages/RankPage/RankPage';
 import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
+import EditBoard from './pages/EditBoard';
 
 
 
@@ -24,6 +25,7 @@ function App() {
           <Route path='/signup' element={<SignupPage />} />
           <Route path='/home' element={<MainPage />} />
           <Route path='/newBoard' element={<NewBoard />} />
+          <Route path='/editBoard/:id' element={<EditBoard />} /> 
           <Route path='/viewBoard/:id' element={<ViewBoardPage />} />
           <Route path='/myPage' element={<MyPage />} />
           <Route path='/studyGroup' element={<StudyGroupPage />} />

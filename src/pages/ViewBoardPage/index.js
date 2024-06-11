@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import BoardBtn from "../../components/BoardBtn/BoardBtn";
 import CommentForm from "../../components/Comments/CommentForm";
 import Comments from "../../components/Comments/Comments";
@@ -6,6 +6,8 @@ import { Navbar } from "../../components/Navbar/Navbar";
 import Viewer from "../../components/Viewer/Viewer";
 import "./style.css";
 import useBoard from "../../hooks/useBoard";
+import { deleteBoard } from "../../actions/boardList";
+import { useDispatch } from "react-redux";
 
 const ViewBoardPage = () => {
     const viewMock = 
@@ -35,12 +37,23 @@ const ViewBoardPage = () => {
             ]
         }
     const params = useParams();
+    const nav = useNavigate();
     const curBoardItem = useBoard(params.id);
-    
+    const dispatch = useDispatch();
+
+
     if(!curBoardItem){
         return <div>데이터 로딩중...</div>
     }
 
+    const onClickDelete = () => {
+        if (
+            window.confirm("게시물을 정말 삭제할까요? 복구되지 않습니다!")
+        ){
+            dispatch(deleteBoard(params.id));
+            nav('/home', {replace: true});
+        }
+    }
 
     return(
         <div>
@@ -63,8 +76,8 @@ const ViewBoardPage = () => {
                     <div className="writeBtn">
                         <BoardBtn title="모집중" /> 
                         <BoardBtn title="신청자 리스트" />
-                        <BoardBtn title="수정하기" />
-                        <BoardBtn title="삭제하기" />
+                        <BoardBtn title="수정하기" onClick={()=>nav(`/editBoard/${params.id}`)}/>
+                        <BoardBtn title="삭제하기" onClick={onClickDelete}/>
                     </div> 
                     :
                     <div className="readBtn">

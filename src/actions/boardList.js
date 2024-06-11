@@ -21,10 +21,18 @@ export const createBoard = (props) => ({
     }
 })
 
-export const updateBoard = (id, created_at, category, title, description, place, isRecruit, view) => ({
+export const updateBoard = (props) => ({
     type: UPDATE_BOARD,
     payload: {
-        id, created_at, category, writer:"노성균", title, description, place, isRecruit, view
+        id: props.id,
+        created_at: props.created_at,
+        category:props.category,
+        writer:"노성균",
+        title: props.title,
+        description: props.description,
+        place: props.place,
+        isRecruit:props.isRecruit,
+        view: props.view
     }
 })
 
