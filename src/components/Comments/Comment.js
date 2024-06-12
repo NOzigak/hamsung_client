@@ -35,7 +35,7 @@ const Comment = ({comment, replies, currentUserId}) => {
             {replies.length > 0 && (
                 <div className="replies">
                     {replies.map(reply => (
-                        <div className="replyWrapper">
+                        <div className="replyWrapper" key={reply.id ? `${reply.id}-${reply.parentId}` : Math.random().toString()}>
                             <Comment key={reply.id} comment={reply} replies={[]}/>                            
                         </div>
 
