@@ -7,11 +7,17 @@ const CommentForm = ({onSubmit, id}) => {
     const handleText = (e) => {
         setText(e.target.value);
     }
+    const cleanArea = () => {
+        setText("");
+    }
 
     return (
         <div className="commentUpload">
             <textarea className="commentInput" onChange={handleText} value={text}></textarea>
-            <BoardBtn title="등록하기" onClick={()=>onSubmit(id, text)}/>                     
+            <BoardBtn title="등록하기" onClick={()=>{
+               onSubmit(id, text);
+               cleanArea();
+            }}/>                     
         </div>
     )
 }

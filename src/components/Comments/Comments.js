@@ -16,7 +16,6 @@ const Comments = ({currentUserId, boardId}) => {
 
     const submitComment = (boardId, text) => {
         dispatch(addComment(boardId, text));
-        console.log("comment : ", boardId, text);
     }
 
     //const getReplies = (commentId) => {

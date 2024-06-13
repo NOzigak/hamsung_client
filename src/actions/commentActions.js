@@ -21,14 +21,14 @@ export const addComment = (boardId, text) => ({
     }
 })
 
-export const addReply = (reply) => ({
+export const addReply = (text, parentId) => ({
     type: ADD_REPLY,
     payload: {
         userId: "1108", // 로그인 구현 후 유저 정보 대체
         username: "sungkyun",
-        text: reply.text,
-        insertDate: new Date().getDate(),
-        parentId: reply.parentId,
+        text: text,
+        insertDate: new Date().getTime(),
+        parentId: parentId,
     }
 })
 
