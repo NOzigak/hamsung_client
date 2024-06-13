@@ -1,22 +1,32 @@
 import { useState } from "react";
 import BoardBtn from "../BoardBtn/BoardBtn";
 import "./Comment.css";
-import CommentForm from "./CommentForm";
 
 
-const Comment = ({comment, replies, currentUserId}) => {
+const Comment = ({comment, replies, onSubmit, currentUserId}) => {
 
     //const canEdit = currentUserId === comment.userId
     const [activeComment, setActiveComment] = useState(null); // {type : "editing" id: "1"}
+    const [text, setText] = useState();
     const isReplying = activeComment &&
         activeComment.type === "replying" &&
         activeComment.id === comment.id;
+
+    const handleText = (e) => {
+        setText(e.target.value);
+    }
     
     const onReply = () => {
-        setActiveComment({type : "replying", id: comment.id})
+        setActiveComment({type : "replying", id: comment.id});
         if(isReplying){
-            setActiveComment({type : "", id:""})
+            setActiveComment({type : "", id:""});
         }
+    };
+    const commentSubmit = () => {
+        onSubmit(comment.id, text);
+    }
+    const replySubmit = () => {
+        // reply 구분 기능 구현..
     }
 
     return (
@@ -24,13 +34,16 @@ const Comment = ({comment, replies, currentUserId}) => {
             <div>
                 <p>{comment.username}</p>
                 <p>{comment.text}</p>
-                <p className="insertDate">{comment.insertDate}</p>                
+                <p className="insertDate">{new Date(comment.insertDate).toLocaleString()}</p>                
             </div>
             <div className="replyBtn">
                 <BoardBtn title="답글" onClick={onReply}/>
             </div>
             {isReplying && (
-                <CommentForm />
+                <div className="commentUpload">
+                    <textarea className="commentInput" onChange={handleText}></textarea>
+                    <BoardBtn title="등록하기" onClick={commentSubmit}/>                     
+                </div>
             )}
             {replies.length > 0 && (
                 <div className="replies">

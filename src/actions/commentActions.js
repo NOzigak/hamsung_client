@@ -8,14 +8,14 @@ const ADD_REPLY = 'ADD_REPLY';
 //const EDIT_REPLY = 'EDIT_REPLY';
 const DELETE_REPLY = 'DELETE_REPLY';
 
-export const addComment = (props) => ({
+export const addComment = (boardId, text) => ({
     type: ADD_COMMENT,
     payload: {
         id: uuidv4(),
-        boardId: props.boardId,
+        boardId: boardId,
         userId: "1108", // 로그인 구현 후 정보 대체
         username: "sungkyun",
-        text: props.text,
+        text: text,
         insertDate: new Date().getTime(),
         replies:[]
     }

@@ -1,11 +1,17 @@
+import { useState } from "react";
 import BoardBtn from "../BoardBtn/BoardBtn";
 import "./CommentForm.css";
 
-const CommentForm = () => {
+const CommentForm = ({onSubmit, id}) => {
+    const [text, setText] = useState();
+    const handleText = (e) => {
+        setText(e.target.value);
+    }
+
     return (
         <div className="commentUpload">
-            <textarea className="commentInput"></textarea>
-            <BoardBtn title="등록하기"/>                     
+            <textarea className="commentInput" onChange={handleText} value={text}></textarea>
+            <BoardBtn title="등록하기" onClick={()=>onSubmit(id, text)}/>                     
         </div>
     )
 }
