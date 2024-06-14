@@ -1,0 +1,125 @@
+.profile-modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: none;
+
+}
+
+.profile-modal.show {
+    display: flex;
+}
+
+.profile-modal.hide {
+    display: none;
+}
+
+.profile-message-design {
+    background-color: #bad9c1;
+    position: absolute;
+    left: 0vw;
+    top: -3vh;
+    width: 31.4vw;
+    height: 7vh;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    font-weight: 600;
+}
+
+.profile-modal-content p {
+    padding-top: 1.5vw;
+    text-align: left;
+    padding-left: 1.5vw;
+}
+
+.profile-modal-content {
+    background-color: #fefefe;
+    position: absolute;
+    top: 8vh;
+    left: 34vw;
+    border: 1px solid #888;
+    width: 33vw;
+    height: 85vh;
+    border-radius: 8px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.edit-button {
+    margin-top: 0.7vw;
+    margin-left: 24vw;
+    padding: 1.5vh 1.5vw;
+    font-size: 1.1vw;
+    background-color: #a3cead;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.edit-button:hover {
+    background-color: darkgray;
+}
+
+.profile-image-container {
+    position: absolute;
+    left: 13.5vw;
+    top: 13vh;
+    width: 6vw;
+    height: 13vh;
+    overflow: hidden;
+    border-radius: 50%;
+  }
+  
+  .profile-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .camera-image{
+    position: absolute;
+    top: 22.5vh;
+    left: 17.5vw;
+    width: 2vw;
+    height: 4vh;
+    
+  }
+
+  .nickname-input{
+    border: none;
+    border-bottom: 1px solid rgb(96, 96, 96);
+    margin-top: 27.5vh;
+    padding: 0.5vw;
+    text-align: center;
+  }
+
+  .tag-message-design{
+    margin-left: 1vw;
+    font-size: 1.1vw;
+    font-weight: 600;
+  }
+
+  .pTag{
+    width: 13vw;
+    height: 5vh;
+    margin-left: 2vw;
+    margin-bottom: 1vh;
+  }
+
+  .nTag{
+    width: 13vw;
+    height: 5vh;
+    margin-left: 2vw;
+  }
+
+  .myPoint{
+    align-items: right;
+    margin-top: 8vh;
+    font-size: 1.1vw;
+    font-weight: 600;
+    margin-left: 21vw;
+  }
