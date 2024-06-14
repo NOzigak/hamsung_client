@@ -2,7 +2,7 @@ import { useState } from "react";
 import BoardBtn from "../BoardBtn/BoardBtn";
 import "./Comment.css";
 import { useDispatch } from "react-redux";
-import { addReply } from "../../actions/commentActions";
+import { addReply, deleteComment, deleteReply } from "../../actions/commentActions";
 
 
 const Comment = ({comment, replies, onSubmit, currentUserId}) => {
@@ -25,13 +25,19 @@ const Comment = ({comment, replies, onSubmit, currentUserId}) => {
             setActiveComment({type : "", id:""});
         }
     };
-    const commentSubmit = () => {
-        onSubmit(comment.id, text);
-    }
+
     const replySubmit = () => {
         dispatch(addReply(text, comment.id))
-
+        setActiveComment({type:"", id:""});
         // reply 구분 기능 구현..
+    }
+
+    const commentDelete = () => {
+        if (comment.parentId){
+            dispatch(deleteReply(comment.parentId, comment.id));
+        } else if (!comment.parentId){
+            dispatch(deleteComment(comment.id));
+        }
     }
 
     return (
@@ -43,7 +49,7 @@ const Comment = ({comment, replies, onSubmit, currentUserId}) => {
             </div>
             <div className="replyBtn">
                 {!comment.parentId && <BoardBtn title="답글" onClick={onReply}/>}
-                
+                {comment.userId === "1108" && <BoardBtn title="삭제하기" onClick={commentDelete}/>} {/*1108을 유저 토큰 정보로 바꿀예정*/}
             </div>
             {isReplying && (
                 <div className="commentUpload">

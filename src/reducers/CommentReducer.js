@@ -74,7 +74,7 @@ const CommentReducer = (state = initialState, action) => {
           return comment;
         });
       case "DELETE_COMMENT":
-        return state.filter(comment => comment.id !== action.payload);
+        return state.filter(comment => comment.id !== action.payload.id);
       case "DELETE_REPLY":
         return state.map(comment => {
           if (comment.id === action.payload.parentId) {

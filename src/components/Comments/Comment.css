@@ -18,6 +18,9 @@
 }
 
 .replyBtn {
+    display: flex;
+    flex-direction: row;
+    gap: 2vw;
     padding: 2vh;
     width: 80vw;
     border-bottom: 1px solid #D9D9D9;

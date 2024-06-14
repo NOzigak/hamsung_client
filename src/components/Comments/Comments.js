@@ -11,12 +11,13 @@ const Comments = ({currentUserId, boardId}) => {
     //const [activeComment, setActiveComment] = useState(null); // {type : "editing" id: "1"}
 
     const comments = useSelector(state => state.comments);
-    console.log(comments);
+
     const dispatch = useDispatch();
 
     const submitComment = (boardId, text) => {
         dispatch(addComment(boardId, text));
     }
+
 
     //const getReplies = (commentId) => {
         //return comments.filter(comment => comment.parentId === commentId)
