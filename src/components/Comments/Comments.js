@@ -1,64 +1,50 @@
-import { useEffect, useState } from "react";
-import BoardBtn from "../BoardBtn/BoardBtn";
 import "./Comments.css";
 import Comment from "./Comment";
+import { useDispatch, useSelector } from "react-redux";
+import getReplies from "../../utils/getReplies";
+import { addComment } from "../../actions/commentActions";
+import CommentForm from "./CommentForm";
 
-const Comments = ({currentUserId}) => {
+const Comments = ({currentUserId, boardId}) => {
 
     //const [backendComments, setBackendComments] = useState([]);
     //const [activeComment, setActiveComment] = useState(null); // {type : "editing" id: "1"}
-    const backendComments = [
-        {
-            id : "1",
-            userId : "21",
-            username : "user1",
-            text: "first comment",
-            insertDate : "2024.05.13 12:45",
-            parentId : null,
-        },
-        {
-            id : "2",
-            userId : "12",
-            username : "user2",
-            text : "first comment first reply",
-            insertDate : "2024.05.13 22:32",
-            parentId: "1",
-        },
-        {
-            id : "3",
-            userId : "33",
-            username : "user3",
-            text : "second comment",
-            insertDate : "2024.05.14 12:30",
-            parentId: null,
-        }
-    ]
-    const getReplies = commentId => {
-        return backendComments.filter(backendComment => backendComment.parentId === commentId)
-        .sort(
-            (a, b) => 
-            new Date(a.insertDate).getTime() - new Date(b.insertDate).getTime()
-            );
-    };
-    const rootComments = backendComments.filter(
-        (backendComment) => backendComment.parentId === null
-    );
+
+    const comments = useSelector(state => state.comments);
+
+    const dispatch = useDispatch();
+
+    const submitComment = (boardId, text) => {
+        dispatch(addComment(boardId, text));
+    }
+
+
+    //const getReplies = (commentId) => {
+        //return comments.filter(comment => comment.parentId === commentId)
+        //.sort(
+            //(a, b) => 
+            //new Date(a.insertDate).getTime() - new Date(b.insertDate).getTime()
+            //);
+    //};
+
     //useEffect(()=>{
         //getCommentsApi().then(data => {
             //setBackendComments(data);
         //})
     //})
-    
+
     return (
         <div className="commentWrapper">
-            {rootComments.map(rootComment => (
-                <div key={rootComment.id}>
+            {comments.map(rootComment => (
+                <div key={`${rootComment.boardId}-${rootComment.id}`}>
                     <Comment 
                         comment={rootComment} 
-                        replies={getReplies(rootComment.id)}
+                        replies={getReplies(comments, rootComment.id)}
+                        onSubmit={submitComment}
                     />                                   
                 </div>
             ))}
+            <CommentForm onSubmit={submitComment} id={boardId}/>
         </div>
     )
 }

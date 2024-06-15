@@ -17,7 +17,6 @@ const useBoard = (id) => {
         }
         setCurBoardItem(currentBoardItem);
     }, [id, data]);
-    console.log("조회된 게시물 : ", curBoardItem);
     return curBoardItem;
 };
 
