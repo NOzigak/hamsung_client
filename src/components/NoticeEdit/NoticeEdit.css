@@ -1,0 +1,16 @@
+.noticeName {
+    width: 50vw;
+    height: 5vh;
+    margin-left: 1vw;
+    background: #FFFFFF;
+    border: 0.5px solid #747474;
+
+}
+
+.noticeDescription {
+    width: 60vw;
+    height: 50vh;
+    margin-left: 0.5vw;
+    background: #FFFFFF;
+    border: 0.5px solid #747474;
+}

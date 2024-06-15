@@ -10,4 +10,5 @@ export const CardWrapper = styled.div`
     width: 23vw;
     height: 29vh;
     margin-top: 5vh;
+    cursor : pointer;
 `

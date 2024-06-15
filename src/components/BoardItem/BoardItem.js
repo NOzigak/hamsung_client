@@ -1,18 +1,19 @@
 import { useNavigate } from "react-router-dom"
 import "./BoardItem.css";
 
-const BoardItem = ({category, writer, title, place, isRecruit, created_at}) => {
+const BoardItem = ({id, category, writer, title, place, isRecruit, created_at}) => {
     const nav = useNavigate();
     const recruitStatus = () => {
-        if(isRecruit === 1){
+        if(isRecruit){
             return "모집중"
-        } else if (isRecruit === 0){
+        } else if (!isRecruit){
             return "모집완료"
         }
     }
+
     const status = recruitStatus();
     return (
-        <div className="boardItem" onClick={()=>nav(`/viewBoard`)}>
+        <div className="boardItem" onClick={()=>nav(`/viewBoard/${id}`)}>
             <div className="ItemWrapper">
                 <div className="columnBasic">
                     {category}

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import "./BoardEdit.css";
 import { useNavigate } from "react-router-dom";
 
-export default function BoardEdit(props){
+export default function BoardEdit({name, initData, onSubmit}){
 
     const selectList = ["어학","취업", "고시", "프로그래밍", "기타"]
     const [inputData, setInputData] = useState({
@@ -15,8 +15,11 @@ export default function BoardEdit(props){
     const nav = useNavigate();
 
     useEffect(()=>{
-        console.log(inputData)
-    },[inputData])
+        if(initData){
+            setInputData(initData);
+        }
+       //console.log(inputData)
+    },[initData])
 
     const handleinputData = (e) => {
         const {name, value} = e.target
@@ -29,11 +32,15 @@ export default function BoardEdit(props){
     const cancleEdit = () => {
         nav("/home")
     }
+
+    const onClickSubmit = () => {
+        onSubmit(inputData);
+    }
     return (
         <div className="boardWrapper">
             <div className="titleWrapper">
                 <div className="boardTitle">
-                    <h1>스터디 {props.name}하기</h1> 
+                    <h1>스터디 {name}하기</h1> 
                 </div> 
             </div>
             <div className="boardInput">
@@ -58,7 +65,7 @@ export default function BoardEdit(props){
                 </div>   
             </div>
             <div className="btnSection">
-                <button className="createBtn">생성</button>
+                <button className="createBtn" onClick={onClickSubmit}>생성</button>
                 <button className="cancleBtn" onClick={cancleEdit}>취소</button>
             </div>
         </div>
