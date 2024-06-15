@@ -5,8 +5,7 @@ import "./CardList.css";
 export const CardList = () => {
 
     const boardData = useSelector(state => state.boards);
-    const sortedData = boardData;
-    sortedData.sort((a, b) => b.view - a.view)
+    const sortedData = boardData.slice().sort((a, b) => b.view - a.view);
 
     return (
         <div className="cardList">

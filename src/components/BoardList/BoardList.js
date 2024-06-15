@@ -19,7 +19,7 @@ export default function BoardList() {
     // redux state 호출
     const boardData = useSelector(state => state.boards);
     const [searchData, setSearchData] = useState(boardData);
-    console.log(searchData)
+
     const searchClick = () => {
         const searchFiltered = boardData.filter(item => 
             item.title.toLowerCase().includes(search.toLowerCase())    

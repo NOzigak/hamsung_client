@@ -1,6 +1,5 @@
 import { useNavigate, useParams } from "react-router-dom";
 import BoardBtn from "../../components/BoardBtn/BoardBtn";
-import CommentForm from "../../components/Comments/CommentForm";
 import Comments from "../../components/Comments/Comments";
 import { Navbar } from "../../components/Navbar/Navbar";
 import Viewer from "../../components/Viewer/Viewer";
@@ -87,8 +86,7 @@ const ViewBoardPage = () => {
 
 
                 <div className="comments">
-                    <Comments />
-                    <CommentForm />
+                    <Comments boardId={params.id}/>
                 </div>
             </div>
         </div>
