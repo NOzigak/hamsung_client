@@ -8,6 +8,8 @@ import EditProfile from "../../components/EditProfile/EditProfile";
 import profileImage from '../../assets/profileImage.jpg';
 import lvSilver from "../../assets/silver.png";
 import lvGold from "../../assets/gold.png";
+import noLate from "../../assets/ptag.png";
+import slowAnswer from "../../assets/ntag.png";
 import ReviewModal from '../../components/ReviewModal/ReviewModal';
 
 export const nickname = "노성균";
@@ -89,6 +91,8 @@ class MyPage extends Component {
                     <p className="user-ID"> {nickname} 님</p>
                     <div className="user-point">나의 포인트: {point} P</div>
                     <p className="user-tag">나의 태그: </p>
+                    <img className="main-pTag" src={noLate} alt="Camera" />
+                    <img className="main-nTag" src={slowAnswer} alt="Camera" />
                     <div className="level-image">
                         <img src={levelImage} alt="Level" />
                     </div>
