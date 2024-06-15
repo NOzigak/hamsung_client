@@ -1,11 +1,14 @@
 
+import { useNavigate } from "react-router-dom";
 import "./PostCard.css";
 import { CardWrapper } from "./styles";
 
-export const PostCard = ({title, writer, created_at, view, category}) => {
+export const PostCard = ({id, title, writer, created_at, view, category}) => {
+
+    const nav = useNavigate();
 
     return (
-        <CardWrapper category={category}>
+        <CardWrapper category={category} onClick={()=>nav(`/viewBoard/${id}`)}>
 
             <div className="cardInfo">
                 <div className="cardTitle">
