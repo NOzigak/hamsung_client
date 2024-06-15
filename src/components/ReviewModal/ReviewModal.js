@@ -1,8 +1,8 @@
 import React from 'react';
-import ModalPage from './ModalPage'; // 변경: 단일 페이지 컴포넌트 불러오기
+import ModalPage from './ModalPage';
 
 const ReviewModal = ({ closeModal, currentPage, nextPage, prevPage }) => {
-    const totalPages = 4; // 페이지 수
+    const totalPages = 4; 
 
     return (
         <div className="review-modal">

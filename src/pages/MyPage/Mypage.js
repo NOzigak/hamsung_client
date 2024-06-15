@@ -8,7 +8,7 @@ import EditProfile from "../../components/EditProfile/EditProfile";
 import profileImage from '../../assets/profileImage.jpg';
 import lvSilver from "../../assets/silver.png";
 import lvGold from "../../assets/gold.png";
-import ReviewModal from '../../components/ReviewModal/ReviewModal'; // 변경: 단일 모달 컴포넌트 불러오기
+import ReviewModal from '../../components/ReviewModal/ReviewModal';
 
 export const nickname = "노성균";
 export let point = 23;
@@ -97,11 +97,11 @@ class MyPage extends Component {
                 <p className="study-list">참여 중인 스터디</p>
                 <div className="inline"></div>
 
-                {/* 평가하기 모달 */}
+                
                 {this.state.showReviewModal && (
                     <ReviewModal
                         closeModal={this.handleCloseReviewModal}
-                        currentPage={this.state.currentPage} // 현재 페이지 전달
+                        currentPage={this.state.currentPage} 
                         nextPage={this.nextPage}
                         prevPage={this.prevPage}
                     />

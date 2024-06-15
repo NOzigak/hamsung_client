@@ -1,7 +1,24 @@
 .Todo-container{
-    margin-top: -35vh;
-    margin-left: 45vw;
-    width: 47vw;
-    height: 47.2vh;
-    border: black 1px solid;
+  margin-top: -35vh;
+  margin-left: 45vw;
+  width: 46.7vw;
+  height: 45.5vh;
+  border: #115d0ed5 1.5px solid;
+}
+
+.currentDate{
+ color:#115d0e;
+ font-weight: 600;
+ font-size: 1.8vw; 
+ margin: 1.5vw;
+ margin-left:2vw;
+}
+
+.todo-input{
+border: none;
+border-bottom: 0.5px solid #000;
+margin-left: 11vw;
+padding: 1vw;
+width: 20vw;
+text-align: center;
 }
