@@ -109,7 +109,7 @@ const SignupPage = () => {
         
       </form>
       <div className="Switcher">
-        <Link to={"/"}>로그인하러가기</Link>
+        <Link to={"/login"}>로그인하러가기</Link>
       </div>
     </div>
   )

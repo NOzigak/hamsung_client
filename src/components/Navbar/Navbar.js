@@ -9,7 +9,7 @@ export const Navbar = () => {
 
             <div className="linkSection">
                 <ul>
-                    <NavLink to="/home">
+                    <NavLink to="/">
                         <li>메인페이지</li>
                     </NavLink>
                     <NavLink to="/mypage">

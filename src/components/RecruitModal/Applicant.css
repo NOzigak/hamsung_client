@@ -1,5 +1,4 @@
 .applicantWrapper {
-    border: 1px solid black;
     height: 8vh;
     display: flex;
     justify-content: center;
@@ -49,6 +48,8 @@
     color: white;
     border-width: 0;
     font-size:2vh;
+
+    cursor: pointer;
 }
 
 .applicantImg {
