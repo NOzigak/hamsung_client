@@ -4,24 +4,21 @@ import { useEffect, useState } from "react";
 import { validateUser } from "../../utils/validate";
 import AuthInput from "../../components/AuthInput/AuthInput";
 import SignupModal from "../../components/SignupModal/SignupModal";
+import { useDispatch, useSelector } from "react-redux";
+import { signup } from "../../actions/authActions";
 
 
 const SignupPage = () => {
   const [formData, setFormData] = useState({
     userName: '',
-    isNameValide: false,
-
     email: '',
-    isEamilValid: false,
-
     password: '',
-    isPwValide: false,
-
     passwordConfirm: '',
-    pwConfirmValide: false,
   });
 
   const [errors, setErrors] =useState({});
+  const dispatch = useDispatch();
+  const auth = useSelector(state => state.auth);
   // 모달 노출 여부
   const [modalOpen, setModalOpen] = useState(false);
   // 모달창 노출
@@ -50,14 +47,27 @@ const SignupPage = () => {
     
     setErrors(validateUser(formData))
 
-    // login hook
     if(Object.values(errors)[0].length === 0 && Object.values(errors)[1].length === 0 &&
     Object.values(errors)[2].length === 0 && Object.values(errors)[3].length === 0
     ){
-      showModal()
-      console.log("회원가입 성공");
+      dispatch(signup(formData));
+
     } 
   }
+  
+  // 회원가입 실패, 성공 처리
+  useEffect(()=> {
+    if(auth.error){
+      console.log("오류 발생", auth.error);
+      return;
+    }
+    if(auth.isAuthenticate){
+      console.log("회원가입 성공")
+      showModal()
+      console.log("회원가입 성공");
+    }
+  }, [auth]);
+
 
 
   return(
