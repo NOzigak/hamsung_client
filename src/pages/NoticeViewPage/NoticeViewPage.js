@@ -1,82 +1,56 @@
-import CommentForm from "../../components/Comments/CommentForm";
-import Comments from "../../components/Comments/Comments";
+import React from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import NoticeBtn from "../../components/BoardBtn/BoardBtn";
 import { Navbar } from "../../components/Navbar/Navbar";
 import Viewer from "../../components/Viewer/Viewer";
-import "../../pages/ViewBoardPage/style.css";
-import { useNavigate } from "react-router-dom";
-import { useParams } from "react-router-dom";
-
+import "../../pages/NoticeViewPage/NoticeViewPage.css";
+import useNotice from "../../hooks/useNotice";
+import { useDispatch } from "react-redux";
+import { deleteNotice } from "../../actions/noticeList";
 
 const NoticeViewPage = () => {
-    const { id } = useParams();
-    const mockData = [
-        {
-            id : 1,
-            writer: "노성균",
-            title : "<필독> 함성 면접 스터디 기본 규칙 설명",
-            place : "서울",
-            created_at: "2024.04.21",
-            description: "공지사항 내용"
-
-        },
-        {
-            id : 2,
-            writer: "노성균",
-            title : "스터디 장소 및 5월 스터디 일정 안내합니다.",
-            place : "서울",
-            created_at : "2024.04.30",
-            description: "공지사항 내용"
-        },
-        {
-            id : 3,
-            writer: "노성균",
-            title : "스터디 요일 및 장소 투표",
-            place : "서울",
-            created_at : "2024.04.19",
-            description: "공지사항 내용"
-        },
-        {
-            id : 4,
-            writer: "노성균",
-            title : "1주차 스터디는 비대면으로 진행됩니다.",
-            place : "서울",
-            created_at : "2024.04.13",
-            description: "공지사항 내용"
-        }
-        
-    ]
-
+    const params = useParams();
     const nav = useNavigate();
+    const NoticeItem = useNotice(params.id);
+    const dispatch = useDispatch();
 
-    
-    return(
+    if (!NoticeItem) {
+        return <div>데이터 로딩중...</div>;
+    }
+    const onClickDelete = () => {
+        if (
+            window.confirm("게시물을 정말 삭제할까요? 복구되지 않습니다!")
+        ){
+            dispatch(deleteNotice(params.id));
+            nav('/home', {replace: true});
+        }
+    }
+
+    return (
         <div>
             <Navbar />
-
-                {mockData.map((item) => (
-                  <div className="detailWrapper">
-                     <div className="detailTitle">
-                         {item.title}
-                     </div>
-                  
-                     <div>
-                           <Viewer
-                             leader = {item.writer}
-                             created_at = {item.created_at}
-                             description = {item.description}  
-                             place = {item.place}
-                           />
-                     </div>
-                    </div>
-                ))}
-
-
-                <div className="comments">
-                    <Comments />
-                    <CommentForm />
+            <div className="detailWrapper">
+                <div className="detailTitle">
+                    {NoticeItem.title}
                 </div>
+
+                <div>
+                    <Viewer
+                        leader = {NoticeItem.writer}
+                        created_at = {NoticeItem.created_at}
+                        description = {NoticeItem.description}
+                    />
+                </div>
+                {NoticeItem.writer==="노성균" ? 
+                    <div className="writeBtn">
+                        <NoticeBtn title="수정하기" onClick={()=>nav(`/editNotice/${params.id}`)}/>
+                        <NoticeBtn title="삭제하기" onClick={onClickDelete}/>
+                    </div> 
+                    :  null                            
+                }
+            </div>
         </div>
-    )
+    );
 }
 
 export default NoticeViewPage;

@@ -41,7 +41,7 @@ const NoticeListPage = () => {
           <div className="noticeList">
              <p className="notice">공지사항</p>
              {mockData.map((item) => (
-                 <div key={item.id} className="noticeItem" onClick={()=>nav(`/notice/${item.id}`)}>
+                 <div key={item.id} className="noticeItem" onClick={()=>nav(`/notice`)}>
                      <div className="noticeContent">
                          <p className="notice-title">{item.title}</p>
                          <p className="notice-date">{item.created_at}</p>
