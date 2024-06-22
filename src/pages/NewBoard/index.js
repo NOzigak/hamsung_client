@@ -12,7 +12,7 @@ const NewBoard = () => {
     const onClickSubmitBtn = (input) => {
         console.log("create this : ", input)
         dispatch(createBoard(input));
-        nav("/home", {replace : true});
+        nav("/", {replace : true});
     }
 
     return(

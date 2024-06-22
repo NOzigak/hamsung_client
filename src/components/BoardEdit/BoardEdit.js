@@ -30,7 +30,7 @@ export default function BoardEdit({name, initData, onSubmit}){
     }
 
     const cancleEdit = () => {
-        nav("/home")
+        nav("/")
     }
 
     const onClickSubmit = () => {
