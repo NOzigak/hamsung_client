@@ -17,8 +17,55 @@
 .todo-input{
 border: none;
 border-bottom: 0.5px solid #000;
-margin-left: 11vw;
+margin-left: 12.5vw;
 padding: 1vw;
 width: 20vw;
 text-align: center;
+outline: none;
+}
+
+.todo-item{
+text-align: center;
+margin-top: 2vh;
+}
+
+.todo-item::before {
+content: "● ";
+color: #115d0e;
+font-weight: bold;
+margin-right: 5px;
+}
+
+.calendar {
+display: grid;
+grid-template-columns: repeat(7, 1fr);
+gap: 5px;
+margin-top: 10px;
+}
+
+.calendar-cell {
+display: flex;
+justify-content: center;
+align-items: center;
+height: 30px;
+border: 1px solid #ccc;
+}
+
+.calendar-cell.has-todo {
+position: relative;
+}
+
+.calendar-cell.has-todo::before {
+content: "●";
+position: absolute;
+top: 2px;
+right: 2px;
+color: #6c757d;
+}
+
+.delete-button{
+background: none;
+border: none; 
+cursor: pointer;
+font-size: 1.5vw;
 }
