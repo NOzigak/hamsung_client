@@ -1,15 +1,16 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./LoginPage.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { login } from "../../actions/authActions";
 
 const LoginPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
+  const nav = useNavigate();
   const dispatch = useDispatch();
   const auth = useSelector(state => state.auth);
+
   console.log(auth);
   const handleData = (e) => {
     if(e.target.type === "email"){
@@ -25,7 +26,18 @@ const LoginPage = () => {
     // login action
     dispatch(login({email, password}));
   }
-
+  
+  // 로그인시 토큰 정보를 로컬 스토리지에 저장.
+  useEffect(() => {
+    if(auth.user){
+      nav('/');
+      try {
+        localStorage.setItem('token', JSON.stringify(auth.user));
+      } catch(e){
+        console.log("localStorage is not working");
+      }
+    }
+  }, [nav, auth.user])
 
   return(
     <div className="LoginWrapper">
