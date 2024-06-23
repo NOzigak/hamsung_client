@@ -1,13 +1,19 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 import "./MyPage.css";
-import profileImage from "../../assets/profileImage.jpg";
-import lvSilver from "../../assets/silver.png";
-import lvGold from "../../assets/gold.png";
+import { Link } from 'react-router-dom';
+import { Navbar } from "../../components/Navbar/Navbar";
 import DeleteID from "../../components/DeleteID/DeleteID";
 import DeleteConfirm from "../../components/DeleteConfirm/DeleteConfirm";
 import EditProfile from "../../components/EditProfile/EditProfile";
-import { Navbar } from "../../components/Navbar/Navbar";
-import {Link} from 'react-router-dom';
+import profileImage from '../../assets/profileImage.jpg';
+import lvSilver from "../../assets/silver.png";
+import lvGold from "../../assets/gold.png";
+import noLate from "../../assets/ptag.png";
+import slowAnswer from "../../assets/ntag.png";
+import ReviewModal from '../../components/ReviewModal/ReviewModal';
+
+export const nickname = "노성균";
+export let point = 23;
 
 class MyPage extends Component {
     constructor(props) {
@@ -15,7 +21,9 @@ class MyPage extends Component {
         this.state = {
             showDeleteIDModal: false,
             showDeleteConfirmModal: false,
-            showEditProfileModal: false
+            showEditProfileModal: false,
+            showReviewModal: false,
+            currentPage: 1,
         };
     }
 
@@ -43,20 +51,30 @@ class MyPage extends Component {
         this.setState({ showEditProfileModal: false });
     };
 
+    handleEvaluateClick = () => {
+        this.setState({ showReviewModal: true });
+    };
+
+    handleCloseReviewModal = () => {
+        this.setState({ showReviewModal: false });
+    };
+
+    nextPage = () => {
+        this.setState(prevState => ({ currentPage: prevState.currentPage + 1 }));
+    };
+
+    prevPage = () => {
+        this.setState(prevState => ({ currentPage: prevState.currentPage - 1 }));
+    };
 
     render() {
-        const userName = "노성균"; 
-        let userPoint = 23;
         let levelImage;
         const studyTitle1 = "면접 스터디(그룹장)";
         const studyTitle2 = "모각코 스터디(멤버)";
-        const place = "서울";
-        const day = "월,화";
-        const type = "기타";
 
-        if (userPoint >= 10 && userPoint < 20) {
+        if (point >= 10 && point < 20) {
             levelImage = lvSilver;
-        } else if (userPoint >= 20 && userPoint < 30) {
+        } else if (point >= 20 && point < 30) {
             levelImage = lvGold;
         }
 
@@ -70,47 +88,56 @@ class MyPage extends Component {
                     <img className="profile-image" src={profileImage} alt="Profile" />
                 </div>
                 <div className="profile">
-                  <p className="user-ID">{userName} 님</p>
-                  <div className="user-point">나의 포인트: {userPoint} P</div>
-                  <p className="user-tag">나의 태그: </p>
-                  <div className="level-image">
-                     <img src={levelImage} alt="Level" />
-                  </div>
-                  <button className="edit-profile-button" onClick={this.handleEditClick}>프로필 수정하기</button>
+                    <p className="user-ID"> {nickname} 님</p>
+                    <div className="user-point">나의 포인트: {point} P</div>
+                    <p className="user-tag">나의 태그: </p>
+                    <img className="main-pTag" src={noLate} alt="Camera" />
+                    <img className="main-nTag" src={slowAnswer} alt="Camera" />
+                    <div className="level-image">
+                        <img src={levelImage} alt="Level" />
+                    </div>
+                    <button className="edit-profile-button" onClick={this.handleEditClick}>프로필 수정하기</button>
                 </div>
                 <p className="study-list">참여 중인 스터디</p>
                 <div className="inline"></div>
 
+                
+                {this.state.showReviewModal && (
+                    <ReviewModal
+                        closeModal={this.handleCloseReviewModal}
+                        currentPage={this.state.currentPage} 
+                        nextPage={this.nextPage}
+                        prevPage={this.prevPage}
+                    />
+                )}
+
+                <div className="myStudy">
+                    <p className="studyTitle">{studyTitle1}</p>
+                    <Link to="/studyGroup">
+                        <button className="studyList-button">바로가기</button>
+                    </Link>
+                </div>
+
+                <div className="myStudy">
+                    <p className="studyTitle">{studyTitle2}</p>
+                    <button className="studyList-button" onClick={this.handleEvaluateClick}>평가하기</button>
+                </div>
+
                 <DeleteID
-                    show={this.state.showDeleteIDModal} 
-                    handleClose={this.handleCloseDeleteIDModal} 
-                    handleConfirm={this.handleConfirmDelete} 
+                    show={this.state.showDeleteIDModal}
+                    handleClose={this.handleCloseDeleteIDModal}
+                    handleConfirm={this.handleConfirmDelete}
                 />
 
                 <DeleteConfirm
-                    show={this.state.showDeleteConfirmModal} 
-                    handleClose={this.handleCloseDeleteConfirmModal} 
+                    show={this.state.showDeleteConfirmModal}
+                    handleClose={this.handleCloseDeleteConfirmModal}
                 />
 
-                <EditProfile 
+                <EditProfile
                     show={this.state.showEditProfileModal}
-                    handleClose={this.handleCloseEditProfileModal}
+                    handleEdit={this.handleCloseEditProfileModal}
                 />
-
-                
-                <div className="myStudy">
-                 <p className="studyTitle">{studyTitle1}</p>
-                 <Link to="/studyGroup">
-                     <button className="studyList-button">바로가기</button>
-                 </Link>
-                </div>
-
-                
-
-                <div className="myStudy">
-                  <p className="studyTitle">{studyTitle2}</p>
-                  <button className="studyList-button" onClick={this.handleDeleteClick}>평가하기</button>
-                </div>
             </div>
         );
     }

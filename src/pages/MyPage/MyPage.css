@@ -158,3 +158,17 @@
     color:#646464;
     text-decoration: underline;
 }
+
+.main-pTag{
+  margin-top: -6.3vh;
+  margin-bottom: 0.5vw;
+  margin-left: 28.5vw;
+  height: 4vh;
+  width: 11vw;
+}
+
+.main-nTag{
+  margin-left: 28.5vw;
+  height: 4vh;
+  width: 11vw;
+}
