@@ -1,0 +1,67 @@
+.applicantWrapper {
+    height: 8vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 2vw;
+}
+
+.userMaxTag {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 3vh;
+    width: 50%;
+    background: #D5FFDE;
+    border-radius: 10px;
+    font-size: 2vh;
+}
+
+.applicantName {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    font-size: 2.5vh;
+}
+
+.addMember {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+}
+
+.addMemberBtn {
+    width: 7vw;
+    height: 5vh;
+    right: 2vw;
+    top: 10vh;
+
+    margin-right: 2vw;
+
+    border-radius: 5px;
+    
+    /* 글씨, 배경 색 */
+    background-color: #BAD9C1;
+    color: white;
+    border-width: 0;
+    font-size:2vh;
+
+    cursor: pointer;
+}
+
+.applicantImg {
+    display: flex;
+    width: 2vw;
+    height: 2vh;
+}
+
+.tagImg {
+    margin-left: 1vw;
+    width: 2vw;
+    height: 3vh;
+    display: flex;
+    align-items: center;
+}

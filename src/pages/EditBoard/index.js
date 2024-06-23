@@ -14,7 +14,7 @@ const EditBoard = () => {
     const onSubmit = (input) => {
         if(window.confirm("내용을 수정할까요?")){
             dispatch(updateBoard(input));
-            nav('/home', {replace: true});
+            nav('/', {replace: true});
         }
     }
 
