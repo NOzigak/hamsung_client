@@ -1,71 +1,72 @@
 .Todo-container{
-    margin-top: -35vh;
-    margin-left: 45vw;
-    width: 46.7vw;
-    height: 45.5vh;
-    border: #115d0ed5 1.5px solid;
+  margin-top: -35vh;
+  margin-left: 45vw;
+  width: 46.7vw;
+  height: 45.5vh;
+  border: #115d0ed5 1.5px solid;
 }
 
 .currentDate{
-   color:#115d0e;
-   font-weight: 600;
-   font-size: 1.8vw; 
-   margin: 1.5vw;
-   margin-left:2vw;
+ color:#115d0e;
+ font-weight: 600;
+ font-size: 1.8vw; 
+ margin: 1.5vw;
+ margin-left:2vw;
 }
 
 .todo-input{
-  border: none;
-  border-bottom: 0.5px solid #000;
-  margin-left: 12.5vw;
-  padding: 1vw;
-  width: 20vw;
-  text-align: center;
-  outline: none;
+border: none;
+border-bottom: 0.5px solid #000;
+margin-left: 12.5vw;
+padding: 1vw;
+width: 20vw;
+text-align: center;
+outline: none;
 }
 
 .todo-item{
-  text-align: center;
-  margin-top: 2vh;
+text-align: center;
+margin-top: 2vh;
 }
 
 .todo-item::before {
-  content: "● ";
-  color: #115d0e;
-  font-weight: bold;
-  margin-right: 5px;
+content: "● ";
+color: #115d0e;
+font-weight: bold;
+margin-right: 5px;
 }
 
 .calendar {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  gap: 5px;
-  margin-top: 10px;
+display: grid;
+grid-template-columns: repeat(7, 1fr);
+gap: 5px;
+margin-top: 10px;
 }
 
 .calendar-cell {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 30px;
-  border: 1px solid #ccc;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 30px;
+border: 1px solid #ccc;
 }
 
 .calendar-cell.has-todo {
-  position: relative;
+position: relative;
 }
 
 .calendar-cell.has-todo::before {
-  content: "●";
-  position: absolute;
-  top: 2px;
-  right: 2px;
-  color: #6c757d;
+content: "●";
+position: absolute;
+top: 2px;
+right: 2px;
+color: #6c757d;
 }
 
 .delete-button{
-  background: none;
-  border: none; 
-  cursor: pointer;
-  font-size: 1.5vw;
+background: none;
+border: none; 
+cursor: pointer;
+font-size: 1.5vw;
+
 }

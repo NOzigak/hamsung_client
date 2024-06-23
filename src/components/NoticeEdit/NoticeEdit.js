@@ -3,21 +3,19 @@ import "../BoardEdit/BoardEdit.css";
 import "./NoticeEdit.css"
 import { useNavigate } from "react-router-dom";
 
-export default function NoticeEdit(props){
+export default function NoticeEdit({name,initData,onSubmit}){
 
-    const selectList = ["어학","취업", "고시", "프로그래밍", "기타"]
     const [inputData, setInputData] = useState({
         title : "",
-        capacity : 1,
-        category : "어학",
-        place : "",
         description : "",
     })
     const nav = useNavigate();
 
     useEffect(()=>{
-        console.log(inputData)
-    },[inputData])
+        if(initData){
+            setInputData(initData);
+        }
+    },[initData])
 
     const handleinputData = (e) => {
         const {name, value} = e.target
@@ -30,11 +28,16 @@ export default function NoticeEdit(props){
     const cancelEditNotice = () => {
         nav("/noticeList")
     }
+
+    const onClickNoticeSubmit = () => {
+        onSubmit(inputData);
+    }
+
     return (
         <div className="boardWrapper">
             <div className="titleWrapper">
                 <div className="boardTitle">
-                    <h1>새 공지사항 {props.name}</h1> 
+                    <h1>새 공지사항 {name}</h1> 
                 </div> 
             </div>
             <div className="boardInput">
@@ -47,7 +50,7 @@ export default function NoticeEdit(props){
                 </div>   
             </div>
             <div className="btnSection">
-                <button className="createBtn">생성</button>
+                <button className="createBtn" onClick={onClickNoticeSubmit}>생성</button> {/* 수정된 부분 */}
                 <button className="cancleBtn" onClick={cancelEditNotice}>취소</button>
             </div>
         </div>
