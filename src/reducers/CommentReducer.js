@@ -1,4 +1,5 @@
 // 부모 게시물의 id(boardId)를 댓글에서 참조한다는 가정하에 crud를 구현.
+// 특정 게시물의 댓글 리스트를 받아온다고 가정
 const initialState = [
     {
         id: "1",
