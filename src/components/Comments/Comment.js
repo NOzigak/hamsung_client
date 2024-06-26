@@ -49,7 +49,7 @@ const Comment = ({comment, replies, onSubmit, currentUserId}) => {
             </div>
             <div className="replyBtn">
                 {!comment.parentId && <BoardBtn title="답글" onClick={onReply}/>}
-                {comment.userId === "1108" && <BoardBtn title="삭제하기" onClick={commentDelete}/>} {/*1108을 유저 토큰 정보로 바꿀예정*/}
+                {comment.username === "sungkyun" && <BoardBtn title="삭제하기" onClick={commentDelete}/>} {/*1108을 유저 토큰 정보로 바꿀예정*/}
             </div>
             {isReplying && (
                 <div className="commentUpload">
