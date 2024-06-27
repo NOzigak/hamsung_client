@@ -19,4 +19,3 @@ const StudyCalendar = ({ onChange }) => {
 };
 
 export default StudyCalendar;
-
