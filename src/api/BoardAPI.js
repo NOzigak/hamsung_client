@@ -1,7 +1,7 @@
 import client from "./client"
 
 // 모집글 전체 조회
-export const getBoards = async () => {
+export const getBoardsRequest = async () => {
     try{
         const response = await client.get("/recruits");
         return response.data;
