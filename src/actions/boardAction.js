@@ -1,4 +1,8 @@
-import { createBoardRequest, deleteBoardRequest, updateBoardRequest } from "../api/BoardAPI";
+import { createBoardRequest, deleteBoardRequest, getBoardsRequest, updateBoardRequest } from "../api/BoardAPI";
+
+const GET_BOARD_REQUEST = "GET_BOARD_REQUEST";
+const GET_BOARD_SUCCESS = "GET_BOARD_SUCCESS";
+const GET_BOARD_FAILURE = "GET_BOARD_FAILRUE";
 
 const CREATE_BOARD_REQUEST = "CREATE_BOARD_REQUEST";
 const CREATE_BOARD_SUCCESS = "CREATE_BOARD_SUCCESS";
@@ -11,6 +15,25 @@ const UPDATE_BOARD_FAILURE = "UPDATE_BOARD_FAILURE";
 const DELETE_BOARD_REQUEST = "DELETE_BOARD_REQUEST";
 const DELETE_BOARD_SUCCESS = "DELETE_BOARD_SUCCESS";
 const DELETE_BOARD_FAILURE = "DELETE_BOARD_FAILURE";
+
+// 모집글을 불러오는 액션
+export const getBoards = () => async (dispatch) => {
+    dispatch({type: GET_BOARD_REQUEST});
+    try{
+        const response = await getBoardsRequest();
+        const data = await response.json();
+        dispatch({
+            type: GET_BOARD_SUCCESS,
+            payload: data,
+        })
+    } catch (error) {
+        console.log("게시물 목록을 가져오는데 실패했습니다.", error);
+        dispatch({
+            type: GET_BOARD_FAILURE,
+            payload: error.message || "게시물 목록을 가져오는데 실패함"
+        })
+    }
+}
 
 // 모집글 생성 액션
 export const createBoard = (inputData) => async (dispatch) => {
