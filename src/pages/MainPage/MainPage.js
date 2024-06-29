@@ -8,7 +8,8 @@ const MainPage = () =>{
 
 
   const boardData = useSelector(state => state.boards);
-
+  // const boardsData = useSelector(state => state.board); // 서버로부터 받아온 모집글 리스트
+  
     return(
         <div>
           <Navbar />

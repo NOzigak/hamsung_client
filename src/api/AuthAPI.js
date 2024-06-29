@@ -22,3 +22,5 @@ export const UserSignup = async (userInfo) => {
         throw error;
     }
 }
+
+// 로그아웃
